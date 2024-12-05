@@ -49,8 +49,8 @@
 
 	header img {
 		position: absolute;
-		height: 20px;
-		left: 5px;
+		height: 30px;
+		left: 3px;
 		top: 0;
 	}
 	.container {
@@ -220,11 +220,11 @@
 			margin-left: 20px;
 			margin: 20;
 		}
-	.profile-image img {
-		border-radius: 50%;
-		width: 120px;
-		height: 120px;
-		object-fit: cover;
-	}
+		.profile-image img {
+			border-radius: 50%;
+			width: 120px;
+			height: 120px;
+			object-fit: cover;
+		}
 	
 	
