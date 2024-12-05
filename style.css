@@ -50,7 +50,7 @@
 		font-size: 1em;
 	}
 	header img {
-		height: 60px;
+		max-width: 40px;
 		position: absolute;
 		left: 20px;
 	}
