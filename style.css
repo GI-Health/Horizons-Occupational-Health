@@ -51,6 +51,7 @@
 		position: absolute;
 		height: 40px;
 		left: 5px;
+		top: 0;
 	}
 	.container {
 		width: 90%;
