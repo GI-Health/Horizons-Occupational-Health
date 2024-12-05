@@ -30,11 +30,7 @@
 		position: relative; /* Ensure the logo can be positioned absolutely */
 	}
 
-	header .logo {
-		position: absolute;
-		left: 0px; /* Adjust as needed */
-		height: 40px;
-	}
+
 
 	.header-content {
 		display: inline-block;
@@ -53,7 +49,7 @@
 
 	header img {
 		position: absolute;
-		height: 100px;
+		height: 40px;
 		left: 20px;
 	}
 	.container {
