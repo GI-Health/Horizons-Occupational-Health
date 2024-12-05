@@ -41,18 +41,11 @@
 		text-align: center;
 	}
 
-	header h1 {
-		margin: 0;
-		font-size: 1.5em;
-	}
-	header p {
-		margin: 0;
-		font-size: 1em;
-	}
 	header img {
-		max-width: 40px;
+		/*height: 60px;*/
 		position: absolute;
 		left: 20px;
+		max-width: 40px;
 	}
 	.container {
 		width: 90%;
@@ -86,7 +79,15 @@
 	h2 {
 		color: #00539C;
 		text-align: center;
+		font-size: 2em;
+		/*margin: 0;*/
 	}
+	h3 {
+		color: #00539C;
+		text-align: center;
+		font-size: 1.5em;
+		margin: 0;
+		}
 	.contact-info {
 		background-color: #e6e6e6;
 		padding: 10px;
@@ -167,9 +168,11 @@
 	@media (min-width: 768px) {
 		header h1 {
 			font-size: 2.5em;
+			margin: 0;
 		}
 		header p {
 			font-size: 1.2em;
+			margin: 0;
 		}
 		.container {
 			width: 80%;
