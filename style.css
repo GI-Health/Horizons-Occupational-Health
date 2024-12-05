@@ -22,7 +22,6 @@
 	header {
 		background: linear-gradient(45deg, var(--primary-color),var(--secondary-color)); /* Adds a gradient */
 		color: white;
-		padding: 30px;
 		text-align: center;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 		display: flex;
@@ -167,6 +166,9 @@
 	
 	
 	@media (min-width: 768px) {
+		header {
+			padding: 30px;
+		}
 		header h1 {
 			font-size: 2.5em;
 			margin: 0;
