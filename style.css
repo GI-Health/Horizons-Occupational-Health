@@ -45,7 +45,7 @@
 		/*height: 60px;*/
 		position: absolute;
 		left: 20px;
-		max-width: 40px;
+		max-width: 60px;
 	}
 	.container {
 		width: 90%;
@@ -80,7 +80,8 @@
 		color: #00539C;
 		text-align: center;
 		font-size: 2em;
-		/*margin: 0;*/
+		margin: 0;
+		padding-bottom: 10px;
 	}
 	h3 {
 		color: #00539C;
