@@ -44,13 +44,13 @@
 
 	header p {
 		font-size: 0.9em;
-		margin: 0;
+		margin: 5px;
 	}
 
 	header img {
 		position: absolute;
 		height: 40px;
-		left: 20px;
+		left: 5px;
 	}
 	.container {
 		width: 90%;
@@ -72,33 +72,39 @@
 	}
 	.profile-image {
 		text-align: center;
-		margin: 20px 0;
 	}
 	.profile-image img {
 		border-radius: 50%;
-		width: 150px;
-		height: 150px;
+		width: 80px;
+		height: 80px;
 		object-fit: cover;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		margin-top: 10px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	}
 	h2 {
 		color: #00539C;
 		text-align: center;
-		font-size: 1em;
+		font-size: 1.2em;
 		margin: 0;
-		padding-bottom: 10px;
 	}
 	h3 {
 		color: #00539C;
 		text-align: center;
-		font-size: 0.7em;
+		font-size: 1em;
 		margin: 0;
 		}
+	h4 {
+		font-size: 0.8em;
+		margin: 0;
+	}			
+	p {
+		font-size: 0.7em;
+	}	
 	.contact-info {
 		background-color: #e6e6e6;
-		padding: 10px;
+		padding: 5px;
 		border-radius: 8px;
-		margin-bottom: 20px;
+		/*margin-bottom: 20px;*/
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	}
 	.contact-info p {
@@ -140,7 +146,7 @@
 		background: linear-gradient(45deg, var(--primary-color),var(--secondary-color)); /* Adds a gradient */
 		color: white;
 		text-align: center;
-		padding: 20px;
+		padding: 10px;
 		font-size: 0.9em;
 	}
 	
@@ -176,6 +182,7 @@
 		}
 		header img {
 			height: 100px; /* Smaller size for narrow screens */
+			left: 20px;
 		}
 		header h1 {
 			font-size: 2.5em;
@@ -183,15 +190,19 @@
 		}
 		h2 {
 			font-size: 2em;
+			padding-bottom: 10px
 			margin: 0;
 		}
 		h3 {
 			font-size: 1.5em;
 			margin: 0;
 		}
-		header p {
-			font-size: 1.2em;
-			margin: 0;
+		h4 {
+		font-size: 1.2em;
+		margin: 0;
+		}			
+		p {
+			font-size: 1em;
 		}
 		.container {
 			flex-direction: row;
@@ -206,8 +217,13 @@
 		}
 		.profile-image {
 			margin-left: 20px;
-			margin: 0;
+			margin: 20;
 		}
+	.profile-image img {
+		border-radius: 50%;
+		width: 120px;
+		height: 120px;
+		object-fit: cover;
 	}
 	
 	
