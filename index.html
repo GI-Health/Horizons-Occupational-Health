@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Horizons Occupational Health offers workplace health and employee wellness solutions, including workplace medical clinics, employee wellness programs, DHP medical exams, and health and safety consultancy for diverse industries in Kenya.">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Horizons Occupational Health offers workplace medical clinics, employee wellness programs, DHP medical exams and health consultancy for workplaces in Kenya">
 	<title>Occupational Health and Wellness Consultants | Horizons</title>
+	<link rel="canonical" href="https://horizonshealthcare.co.ke"/>
 	<link alt="Horizons Occupational Health icon" href="horizons-occupational-health-icon.png" rel="icon" type="image/png" />
 	<link href="style.css" rel="stylesheet" />
+	
 <meta name="google-site-verification" content="iK7VppEGKD7lQOlWkghIZUcA_BgRL0z7UCWwVyVW3bQ" />
 </head>
 <body>
@@ -14,214 +16,97 @@
       <img src= "assets/horizons-occupational-health-logo.png" alt="Horizons Occupational Health Logo">
     </picture>
 <div class="header-content">
-<h1>Horizons Occupational Health</h1>
+	<h1>Horizons Occupational Health</h1>
+	<h4>For all your Occupational Health and Wellness Solutions</h4>
+	
+	<button id="menu-button" aria-label="Toggle Menu">☰</button>
 
-<h4>For all your Occupational Health and Wellness Solutions</h4>
+    <!-- Navigation Menu -->
+    <nav id="nav-menu" class="hidden">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 </div>
 </header>
 
 <div class="container">
-<section id="what-we-do">
-<h2>What We Do</h2>
 
-<h4>We provide a wide range of occupational health and wellness services, tailored to meet your business and employee needs.</h4>
+	<section class="feature-section">
+    <!-- Section 1: Why Occupational Health Matters -->
+    <div class="feature-container">
+        <div class="feature-image">
+            <img src="assets/placeholder1.jpg" alt="Why Occupational Health Matters" loading="lazy">
+        </div>
+        <div class="feature-text slide-in">
+            <h2>Why Occupational Health Matters</h2>
+            <p>
+                "Occupational health is all about creating safer, healthier workplaces for both employees and employers. By tackling health risks, preventing injuries, and supporting overall well-being, occupational health services help you stay compliant while building a stronger, more engaged team. Prioritizing occupational health is an investment in your organization's long-term success and growth!"
+            </p>
+			<a href="services.html" class="cta">Explore Our Services</a>
+        </div>
+    </div>
 
-<div class="services">
-<div class="service-item" onclick="toggleContent('service2')">Occupational Health Services <span>&rarr;</span></div>
+    <!-- Section 2: Benefits to Employers -->
+    <div class="feature-container reverse">
+        <div class="feature-image">
+            <img src="assets/placeholder2.jpg" alt="Benefits to Employers" loading="lazy">
+        </div>
+        <div class="feature-text slide-in">
+            <h3>Benefits to Employers</h3>
+            <ul>
+                <li>Lower healthcare and absenteeism costs</li>
+                <li>Improved workforce morale and productivity</li>
+                <li>Enhanced employee retention</li>
+                <li>Prevention of workplace injuries</li>
+                <li>Better quality and reputation of business</li>
+            </ul>
+        </div>
+    </div>
 
-<div class="service-content" id="service2">
-<ul>
-	<li>Pre-employment, periodic, and exit medical examinations</li>
-	<li>Workplace risk assessments and audits</li>
-	<li>Ergonomics assessments and recommendations</li>
-	<li>Health and safety training and compliance</li>
-	<li>Management of occupational injuries and illnesses</li>
-</ul>
+    <!-- Section 3: Benefits to Employees -->
+    <div class="feature-container">
+        <div class="feature-image">
+            <img src="assets/placeholder3.jpg" alt="Benefits to Employees" loading="lazy">
+        </div>
+        <div class="feature-text slide-in">
+            <h3>Benefits to Employees</h3>
+            <ul>
+                <li>Quick access to medical care</li>
+                <li>Convenient follow-up and early recovery</li>
+                <li>Reduced fatigue and discomfort</li>
+                <li>Improved quality of life</li>
+                <li>Higher job satisfaction</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 4: Why Choose Us -->
+    <div class="feature-container reverse">
+        <div class="feature-image">
+            <img src="assets/placeholder4.jpg" alt="Why Choose Us" loading="lazy">
+        </div>
+        <div class="feature-text slide-in">
+            <h2>Why Choose Us</h2>
+            <p>
+                At Horizons Occupational Health, we understand that a healthy workforce is the foundation of a successful organization. 
+                Our mission is to enhance employee health, reduce absenteeism, and improve overall productivity.
+            </p>
+            <ul>
+                <li>Customized Services</li>
+                <li>Regulatory Compliance</li>
+                <li>Experienced Team</li>
+                <li>Proven Results</li>
+            </ul>
+        </div>
+    </div>
+	</section>
+
 </div>
 
-<div class="service-item" onclick="toggleContent('service3')">Employee Health and Wellness<span>&rarr;</span></div>
-
-<div class="service-content" id="service3">
-<ul>
-	<li>Periodic voluntary medical health screenings for cancer and chronic diseases</li>
-	<li>Health promotion sessions on lifestyle diseases and prevention</li>
-	<li>Diet and nutrition education</li>
-	<li>General fitness programs</li>
-	<li>Establish an Employee Assistance Program (EAP) for mental health and addiction issues</li>
-	<li>Organize periodic group wellness challenges</li>
-	<li>Smoking cessation programs</li>
-	<li>Women&#39;s health programs, including maternity support</li>
-	<li>Men&#39;s health programs, focusing on specific male health issues</li>
-	<li>Mental health awareness and stress management programs</li>
-	<li>Substance abuse education and support</li>
-</ul>
-</div>
-
-<div class="service-item" onclick="toggleContent('service1')">Establishment of Workplace Clinics <span>&rarr;</span></div>
-
-<div class="service-content" id="service1">
-<ul>
-	<li>Health Operations Management</li>
-	<li>General outpatient medical treatment</li>
-	<li>Emergency response and first aid services</li>
-	<li>General and Travel Vaccinations</li>
-	<li>Health and wellness programs</li>
-	<li>Health education and promotion</li>
-</ul>
-</div>
-
-<div class="service-item" onclick="toggleContent('service4')">General H&amp;S Consultancy <span>&rarr;</span></div>
-
-<div class="service-content" id="service4">
-<ul>
-	<li>Health and safety policy development</li>
-	<li>Workplace wellness program design</li>
-	<li>Training and development for health and safety personnel</li>
-	<li>Health risk assessments and management plans</li>
-	<li>Regulatory compliance consulting</li>
-</ul>
-</div>
-</div>
-</section>
-</div>
-
-<div class="container">
-<h2>Meet the team...</h2>
-
-<div class="profile-section">
-<div class="profile-image">
-    <picture>
-		<source srcset="assets/ign.webp" type="image/webp">
-		<img src="assets/ign.png" alt="Dr. Gichuki">
-	</picture>
-</div>
-
-<section id="our-team">
-<h3>Dr. Gichuki I.</h3>
-
-<div class="contact-info">
-<p>Email: <a href="mailto:gichuki@horizonshealthcare.co.ke">gichuki@HorizonsHealthcare.co.ke</a></p>
-
-<p>Phone: <a href="tel:+254738476324">+254 738 476324</a></p>
-</div>
-
-<h4>Healthcare Leader and Manager, Designated Health Practitioner (DHP), Occupational Health Doctor <span class="more-link" id="gichuki-link" onclick="toggleMoreContent('gichuki')">more...</span></h4>
-
-<div class="more-content" id="gichuki">
-<p>Dr. Gichuki is a dedicated doctor with a vast experience in Occupational Safety and Health, managing workplace health risks, ensuring regulatory compliance, and conducting employee assessments across diverse industries. His client-centred approach and commitment to organizational well-being has contributed to healthier populations and safer work environments.</p>
-
-<h4>Occupational Health &amp; Medicine</h4>
-
-<ul>
-	<li>
-	<p>Establishment of workplace medical clinics</p>
-	</li>
-	<li>
-	<p>Management of occupational injuries and illnesses</p>
-	</li>
-	<li>
-	<p>Statutory occupational medical examinations</p>
-	</li>
-	<li>
-	<p>Surveillance for occupational illnesses</p>
-	</li>
-	<li>
-	<p>Workplace ergonomics risk assessments</p>
-	</li>
-	<li>
-	<p>Pre-employment and Interval Occupational Medical Examinations</p>
-	</li>
-	<li>
-	<p>Advisor at workplace Health &amp; Safety Committees</p>
-	</li>
-</ul>
-
-<h4>Healthcare Leadership</h4>
-
-<ul>
-	<li>
-	<p>Clinical services oversight</p>
-	</li>
-	<li>
-	<p>Financial management, budgeting and Procurement</p>
-	</li>
-	<li>
-	<p>Personnel recruitment, capacity development and supervision</p>
-	</li>
-	<li>
-	<p>Development of health Quality improvement systems</p>
-	</li>
-</ul>
-</div>
-</section>
-
-<div class="profile-image">
-	<picture>
-		<source srcset="assets/bnm.webp" type="image/webp">
-		<img src="assets/bnm.png" alt="Beth M.">
-	</picture>
-</div>
-
-<section>
-<h3>Beth M.</h3>
-
-<div class="contact-info">
-<p>Email: <a href="mailto:beth@HorizonsHealthcare.co.ke">beth@HorizonsHealthcare.co.ke</a></p>
-
-<p>Phone: <a href="tel:+254723993876">+254 723 993876</a></p>
-</div>
-
-<h4>Wellness Coordinator, Healthcare Administrator, Workplace Health Promoter <span class="more-link" id="beth-link" onclick="toggleMoreContent('beth')">more...</span></h4>
-
-<div class="more-content" id="beth">
-<p>Beth is a compassionate Wellness Coordinator with 15 years of experience helping individuals, families and communities to learn, thrive and achieve their health goals. She has extensive experience with improving health awareness and engagement through health program development and outreach strategies.</p>
-
-<h4>Wellness Coordination</h4>
-
-<ul>
-	<li>
-	<p>Workplace Wellness Program Development</p>
-	</li>
-	<li>
-	<p>Coordination and implementation of Health promotion campaigns.</p>
-	</li>
-	<li>
-	<p>Organization and conducting of health Education for diverse organizations.</p>
-	</li>
-	<li>
-	<p>Wellness Programs Monitoring and Evaluation</p>
-	</li>
-	<li>
-	<p>Occupational Health and Safety Advocacy</p>
-	</li>
-	<li>
-	<p>Health and Safety Training and compliance</p>
-	</li>
-</ul>
-
-<h4>Healthcare Administration</h4>
-
-<ul>
-	<li>
-	<p>Emergency Response and Preparedness</p>
-	</li>
-	<li>
-	<p>Client Experience and Service Excellence.</p>
-	</li>
-	<li>
-	<p>Incident Investigation and Root Cause Analysis</p>
-	</li>
-	<li>
-	<p>Health and Safety Audits and Inspections</p>
-	</li>
-	<li>
-	<p>Client medical education and counseling.</p>
-	</li>
-</ul>
-</div>
-</section>
-</div>
-</div>
 
 <footer>&copy; 2024 Horizons Occupational Health
 <div class="social-icons"><img alt="Facebook" src="assets/facebook_icon.png" /> <img alt="LinkedIn" src="assets/linkedin_icon.png" /> <img alt="Twitter(X)" src="assets/twitter_icon.png" /></div>

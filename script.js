@@ -1,3 +1,7 @@
+
+
+
+
 function toggleContent(id) {
 	// Select all service content divs
 	var contents = document.querySelectorAll('.service-content');
@@ -39,3 +43,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+
+const menuButton = document.getElementById("menu-button");
+const navMenu = document.getElementById("nav-menu");
+
+menuButton.addEventListener("click", () => {
+    console.log('Button clicked'); // Debugging checkpoint
+    navMenu.classList.toggle("hidden");
+});
+
+// Close the menu if the user clicks anywhere outside the menu or button
+document.addEventListener("click", (event) => {
+    const isClickInsideMenu = navMenu.contains(event.target);
+    const isClickInsideButton = menuButton.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickInsideButton && !navMenu.classList.contains("hidden")) {
+        navMenu.classList.add("hidden"); // Close the menu
+    }
+});
+
+	const slideInTextElements = document.querySelectorAll('.feature-text');
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('active');
+			}
+		});
+	}, {
+		threshold: 0.1, // Trigger when 10% of the element is visible
+	});
+
+	slideInTextElements.forEach((el) => observer.observe(el));

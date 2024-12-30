@@ -7,6 +7,7 @@
   --text-color0: #f9f9f9; /* Ghost white */
   --text-color: #333; /* Dark grey */
   --background-color: #CDC6C6; /* Light grey */
+  --background-color2: #e6e6e6; /* Light grey */
 }
 
 /* Import Google Font */
@@ -28,9 +29,12 @@
 		text-align: center;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 		display: flex;
+		flex-direction: column; /* Stack content vertically */
 		justify-content:  center; /* Center the content */
 		align-items: center;
 		position: relative; /* Ensure the logo can be positioned absolutely */
+		z-index: 3;
+		padding: 5px;
 	}
 
 	.header-content {
@@ -44,7 +48,7 @@
 	}
 	
 	header h4{
-	color: var(--text-color0);
+		color: var(--text-color0);
 	}
 
 	header p {
@@ -54,15 +58,167 @@
 
 	header img {
 		position: absolute;
-		height: 30px;
+		height: 40px;
 		left: 3px;
-		top: 3px;
+		top: 50%;
+		transform: translateY(-50%);
 	}
+	
+
+/* NAVIGATION MENU */
+nav {
+    padding: 0; /* Removed padding from original */
+    margin: 0; /* Removed margin-top from original */
+    background-color: var(--primary-color); /* Ensures the header and menu have a cohesive color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly more prominent shadow for a floating effect */
+    border-radius: 8px; /* Rounded corners for a smoother look */
+	z-index: 5;
+}
+
+nav ul {
+    /* MODIFIED */
+    list-style: none;
+    display: Block; /* Hidden by default for mobile */
+    flex-direction: column; /* Stack items for mobile view */
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%; /* Below the header */
+    right: 0;
+    width: 30%;
+    background-color:  var(--secondary-color); /* Optional background for dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    border-radius: 10px; /* Rounded corners for the dropdown */
+}
+
+nav ul li {
+    text-align: left; /* Center-align text in dropdown */
+}
+
+nav ul li a {
+    /* RETAINED FROM ORIGINAL */
+    color: var(--text-color0); /* Matches header text color */
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px; /* Increased padding for easier tapping on mobile */
+    display: block; /* Ensures links fill their container */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    /* RETAINED FROM ORIGINAL */
+    background-color: #e0efff; /* Matches service-item hover background */
+    color: #0066cc; /* Matches overall color scheme */
+}
+
+nav ul li a.active {
+    /* RETAINED FROM ORIGINAL */
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: #f0f8ff; /* Matches service-item background */
+    color: #0066cc; /* Matches header text */
+}
+
+#menu-button {
+	cursor: pointer;
+	z-index: 3;
+    position: absolute; /* Allow positioning within the header */
+    right: 10px; /* Align to the right */
+    top: 50%; /* Vertically center */
+    transform: translateY(-50%); /* Adjust for exact vertical centering */
+	color: var(--secondary-color); /* Match sec color */
+}
+
+.hidden {
+    display: none; /* Hides the nav menu when the .hidden class is applied */
+}
+
+#nav-menu {
+	display: none; /* Ensure the menu is hidden by default */
+}
+
+#nav-menu:not(.hidden) {
+    display: block; /* Show the menu when the .hidden class is removed */
+}
+
+		/* General Section Styling
+		.feature-section {
+			padding: 1rem 0;
+			background-color: #f9f9f9; /* Light background
+		}*/
+
+		/* Flex container for image and text */
+		.feature-container {
+			display: flex;
+			flex-direction: column; /* Mobile first: stacked layout */
+			align-items: center;
+			gap: 1.5rem;
+			margin: 2rem auto;
+			max-width: 1200px; /* Ensures centering on large screens */
+			position: relative;
+			padding: 1rem;
+		}
+
+		.feature-image {
+			order: 2; /* Ensure text comes first */
+		}
+		
+		/* Image Styling */
+		.feature-image img {
+			width: 100%;
+			max-width: 350px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			  flex: 1 1 50%; /* Equal width */
+			  aspect-ratio: 1.5; /* Forces square */
+			  overflow: hidden;
+			  object-fit: cover;
+		}
+
+		/* Text Block Styling */
+		.feature-text {
+			display:grid;
+			background: #f9f9f9;
+			padding: 1.5rem;
+			border-radius: 10px;
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+			z-index: 1;
+			position: relative;
+			order: 1; /* Ensure text comes first */
+    opacity: 0; /* Hidden initially */
+    transform: translateX(100%); /* Positioned off-screen to the rt */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth animation */
+}
+
+/* Active state: Bring the text into view */
+.feature-text.active {
+    opacity: 1;
+    transform: translateX(0); /* Reset to original position */
+}
+
+/* Reverse slide-in for text only (from the right) */
+.feature-container.reverse .feature-text {
+    transform: translateX(-100%); /* Positioned off-screen to the lt */
+}
+
+/* Active reverse: Bring the text into view */
+.feature-container.reverse .feature-text.active {
+    transform: translateX(0); /* Reset to original position */
+}
+
+		
+		.cta {
+			display: grid;
+			place-self: center;
+		}
+
+			
 	.container {
 		width: 90%;
 		margin: 20px auto;
 		background: var(--background-color);
-		padding: 20px;
+		/*padding: 20px;*/
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 		border-radius: 8px;
 		flex: 1;
@@ -89,6 +245,18 @@
 		margin-top: 10px;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 	}
+	
+	.more-link {
+		color: #00539C;
+		cursor: pointer;
+		text-decoration: underline;
+		z-index: 2;
+		position: relative;
+	}
+	.more-content {
+		display: none;
+	}
+	
 	.overlay {
 		position: absolute; /* Position it over the image */
 		top: 0;
@@ -122,7 +290,7 @@
 		color: var(--text-color)
 	}	
 	.contact-info {
-		background-color: #e6e6e6;
+		background-color: var(--background-color2);
 		padding: 5px;
 		border-radius: 8px;
 		/*margin-bottom: 20px;*/
@@ -162,11 +330,118 @@
 	.service-content {
 		display: none;
 		padding: 10px;
-		background-color: #e6e6e6;
+		background-color: var(--background-color2);
 		border-radius: 8px;
 		margin-top: 5px;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	}
+	
+	.contact-page {
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-info h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.contact-info p {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.info-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+}
+
+.info-card h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.info-card p {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.contact-form {
+    background-color:  var(--background-color2);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative; /* Normal position is static*/
+	z-index: 2;
+}
+
+.contact-form h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .btn-submit {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .btn-submit:hover {
+    background-color: var(--secondary-color);
+}
+
+	
 	footer {
 		background: linear-gradient(45deg, var(--primary-color),var(--secondary-color)); /* Adds a gradient */
 		color: var(--text-color0);
@@ -191,26 +466,13 @@
 		transition: transform 0.2s;
 	}
 	
-	.more-link {
-		color: #00539C;
-		cursor: pointer;
-		text-decoration: underline;
-		z-index: 2;
-		position: relative;
-	}
-	.more-content {
-		display: none;
-	}
-	
-	
 	@media (min-width: 768px) {
 		header {
-			padding: 30px;
+			padding: 20px;
 		}
 		header img {
-			height: 100px; /* Smaller size for narrow screens */
+			height: 100px; /* larger size */
 			left: 20px;
-			top: 30px;
 		}
 		header h1 {
 			font-size: 2.5em;
@@ -236,23 +498,116 @@
 		p {
 			font-size: 1em;
 		}
+		
+			nav {
+		padding: 10px 0;
+		margin-top: 10px; /* Space between text and navigation! */
+		background-color: transparent;  
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+	}
+	
+		   nav ul {
+        display: flex; /* Show nav menu as a row on desktop */
+        flex-direction: row; /* Ensure items are in a row */
+        justify-content: center; /* Center align */
+        gap: 30px; /* Retained gap */
+        position: relative; /* Normal position is static*/
+        background-color: transparent; /* No background for desktop */
+        box-shadow: none; /* Remove shadow for desktop */
+		z-index: 2;
+		width: 100%;
+		}
+		
+			nav ul li a {
+		padding: 5px;
+		border-radius: 3px;
+		}
+
+		#menu-button {
+			display: none; /* Hide the button on larger screens */
+		}
+		
+		#nav-menu {
+			display: block; /* Or any other display value, like flex or inline-block */
+		}
+		
 		.container {
 			/*flex-direction: row;*/
 			width: 90%;
 		}
 		.profile-section {
-			flex-direction: row;
+			flex-direction: column;
 			justify-content: space-between;
 		}
 		.profile-section section {
-			width: 45%;
+			/* width: 45%; */
+		}
+				.profile {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 50%;
+			margin: 20px;
 		}
 		.profile-image {
-			margin: 20px;
+			margin: 0 20px;
 		}
 		.profile-image img {
 		width: 120px;
 		height: 120px;
-	}
+		border-radius: 10%;
+		}	
+		
 	
+		.feature-container {
+			flex-direction: row; /* Horizontal layout for larger screens */
+			align-items: center;
+			justify-content: center;
+			text-align: left;
+			gap: 2rem;
+		}
+
+		.feature-container.reverse {
+			flex-direction: row-reverse; /* Reverse for alternating layout */
+		}
+
+		.feature-container .feature-text {
+			max-width: 500px;
+			margin-left: -60px; /* Overlap */
+		}
+
+		.feature-container.reverse .feature-text {
+			margin-left: 0;
+			margin-right: -60px; /* Reverse overlap */
+		}
+		.feature-text {
+			min-height: 200px; /* Adjust based on your design */
+			min-width: 500px; /* Adjust based on your design */
+			order: 0; /* Default order for horizontal layout */
+			transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth animation */
+		}
+		.feature-image img {
+			max-width: 450px; /* Slightly larger images */
+		}
+
+		.feature-image {
+			order: 0; /* Default order for horizontal layout */
+		}
+
+	}
+
+	/* Large Desktop Adjustments */
+	@media (min-width: 1024px) {
+		.feature-container .feature-text {
+			margin-left: -80px; /* Larger overlap */
+		}
+
+		.feature-container.reverse .feature-text {
+			margin-right: -80px;
+		}
+
+		.feature-image img {
+			max-width: 550px; /* larger images */
+		}
+	}
 	
