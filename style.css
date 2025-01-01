@@ -149,6 +149,7 @@ nav ul li a.active {
 
 #nav-menu {
 	display: none; /* Ensure the menu is hidden by default */
+	z-index: 5;
 }
 
 #nav-menu:not(.hidden) {
