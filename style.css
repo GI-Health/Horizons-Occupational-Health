@@ -186,10 +186,10 @@ nav ul li a.active {
 			z-index: 1;
 			position: relative;
 			order: 1; /* Ensure text comes first */
-    opacity: 0; /* Hidden initially */
-    transform: translateX(100%); /* Positioned off-screen to the rt */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth animation */
-}
+			opacity: 0; /* Hidden initially */
+			transform: translateX(100%); /* Positioned off-screen to the rt */
+			transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth animation */
+		}
 
 /* Active state: Bring the text into view */
 .feature-text.active {
@@ -223,6 +223,11 @@ nav ul li a.active {
 		border-radius: 8px;
 		flex: 1;
 	}
+	.profile {
+		border-radius: 8px;
+		background: var(--background-color2);
+		margin: 10px;
+		}
 	.profile-section {
 		display: flex;
 		flex-direction: column;
@@ -276,7 +281,7 @@ nav ul li a.active {
 	h3 {
 		text-align: center;
 		font-size: 1em;
-		margin: 0;
+		margin: 3px;
 		color: var(--secondary-color);
 		}
 	h4 {
@@ -410,6 +415,8 @@ nav ul li a.active {
     display: block;
     margin-bottom: 0.5rem;
     color: var(--secondary-color);
+		position: absolute; /* Remove from the document flow */
+		clip: rect(0 0 0 0); /* Clip the label so it doesn't appear visually */
 }
 
 .contact-form input,
@@ -439,6 +446,9 @@ nav ul li a.active {
 
 .contact-form .btn-submit:hover {
     background-color: var(--secondary-color);
+}
+.invalid {
+  border: 2px solid red !important;
 }
 
 	
@@ -542,12 +552,13 @@ nav ul li a.active {
 		.profile-section section {
 			/* width: 45%; */
 		}
-				.profile {
+		.profile {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			width: 50%;
 			margin: 20px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 		}
 		.profile-image {
 			margin: 0 20px;
@@ -592,6 +603,10 @@ nav ul li a.active {
 
 		.feature-image {
 			order: 0; /* Default order for horizontal layout */
+		}
+		
+		.contact-form label {
+			position: relative; /* Remove from the document flow */
 		}
 
 	}
