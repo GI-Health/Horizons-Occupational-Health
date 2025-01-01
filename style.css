@@ -23,6 +23,18 @@
 		min-height: 100vh;
 		position: relative;
 	}
+
+	.overlay {
+		position: absolute; /* Position it over the image */
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0); /* Add a transparent black overlay */
+		z-index: 1;
+		pointer-events: none; /* Allow clicks to pass through to lower elements */
+	}
+	
 	header {
 		background: linear-gradient(45deg,var(--secondary-color), var(--primary-color)); /* Adds a gradient */
 		color: var(--text-color0);
@@ -33,7 +45,7 @@
 		justify-content:  center; /* Center the content */
 		align-items: center;
 		position: relative; /* Ensure the logo can be positioned absolutely */
-		z-index: 3;
+		z-index: 0;
 		padding: 5px;
 	}
 
@@ -72,6 +84,7 @@ nav {
     background-color: var(--primary-color); /* Ensures the header and menu have a cohesive color */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly more prominent shadow for a floating effect */
     border-radius: 8px; /* Rounded corners for a smoother look */
+    position: relative;
 	z-index: 5;
 }
 
@@ -183,7 +196,8 @@ nav ul li a.active {
 			padding: 1.5rem;
 			border-radius: 10px;
 			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-			z-index: 1;
+			z-index: 2;
+			pointer-events: none; /* Prevent interactions with the text */
 			position: relative;
 			order: 1; /* Ensure text comes first */
 			opacity: 0; /* Hidden initially */
@@ -208,7 +222,10 @@ nav ul li a.active {
 }
 
 		
-		.cta {
+		.cta {    
+			position: relative; /* Create a new stacking context for the link */
+			z-index: 2; /* Place the link above the overlay */
+			pointer-events: auto; /* Enable clicks on this specific element */
 			display: grid;
 			place-self: center;
 		}
@@ -260,17 +277,6 @@ nav ul li a.active {
 	}
 	.more-content {
 		display: none;
-	}
-	
-	.overlay {
-		position: absolute; /* Position it over the image */
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, 0); /* Add a transparent black overlay */
-			/*border-radius: 50%;  Match an image's rounded corners */
-		z-index: 1;
 	}
 	h2 {
 		color: var(--secondary-color);
