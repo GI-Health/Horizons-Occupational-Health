@@ -32,7 +32,7 @@
 		height: 100%;
 		background: rgba(0, 0, 0, 0); /* Add a transparent black overlay */
 		z-index: 1;
-		pointer-events: none; /* Allow clicks to pass through to lower elements */
+		/*pointer-events: none; /* Allow clicks to pass through to lower elements */
 	}
 	
 	header {
@@ -45,8 +45,9 @@
 		justify-content:  center; /* Center the content */
 		align-items: center;
 		position: relative; /* Ensure the logo can be positioned absolutely */
-		z-index: 0;
+		z-index: 5;
 		padding: 5px;
+		user-select: none; /* Prevent text selection */
 	}
 
 	.header-content {
@@ -70,7 +71,8 @@
 
 	header img {
 		position: absolute;
-		height: 40px;
+		width: 35px;
+		height: 35px;
 		left: 3px;
 		top: 50%;
 		transform: translateY(-50%);
@@ -84,21 +86,20 @@ nav {
     background-color: var(--primary-color); /* Ensures the header and menu have a cohesive color */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly more prominent shadow for a floating effect */
     border-radius: 8px; /* Rounded corners for a smoother look */
-    position: relative;
 	z-index: 5;
 }
 
 nav ul {
     /* MODIFIED */
     list-style: none;
-    display: Block; /* Hidden by default for mobile */
+    /*display: Block; /* Hidden by default for mobile */
     flex-direction: column; /* Stack items for mobile view */
     margin: 0;
     padding: 0;
     position: absolute;
     top: 100%; /* Below the header */
     right: 0;
-    width: 30%;
+    width: 20%;
     background-color:  var(--secondary-color); /* Optional background for dropdown */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 5;
@@ -106,7 +107,7 @@ nav ul {
 }
 
 nav ul li {
-    text-align: left; /* Center-align text in dropdown */
+    text-align: center; /* Center-align text in dropdown */
 }
 
 nav ul li a {
@@ -135,7 +136,7 @@ nav ul li a.active {
 
 #menu-button {
 	cursor: pointer;
-	z-index: 3;
+	z-index: 5;
     position: absolute; /* Allow positioning within the header */
     right: 10px; /* Align to the right */
     top: 50%; /* Vertically center */
@@ -163,12 +164,28 @@ nav ul li a.active {
 		}*/
 
 		/* Flex container for image and text */
+		
+		.custom-bullets li {
+			list-style: none; /* Remove default bullets */
+			position: relative;
+			padding-left: 20px; /* Space for custom bullet */
+			line-height: 1.2;
+		}
+
+		.custom-bullets li::before {
+			content: '➢'; /* Unicode for bullet ➣➢ */
+			position: absolute;
+			left: 0;
+			color: var(--primary-color); /* Custom color */
+			font-size: 1.2em; /* Adjust size */
+			margin-right: 10px;
+		}
+
 		.feature-container {
 			display: flex;
 			flex-direction: column; /* Mobile first: stacked layout */
 			align-items: center;
 			gap: 1.5rem;
-			margin: 2rem auto;
 			max-width: 1200px; /* Ensures centering on large screens */
 			position: relative;
 			padding: 1rem;
@@ -176,6 +193,7 @@ nav ul li a.active {
 
 		.feature-image {
 			order: 2; /* Ensure text comes first */
+			user-select: none;
 		}
 		
 		/* Image Styling */
@@ -198,7 +216,7 @@ nav ul li a.active {
 			border-radius: 10px;
 			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 			z-index: 2;
-			pointer-events: none; /* Prevent interactions with the text */
+			user-select: none; /* Prevent text selection */
 			position: relative;
 			order: 1; /* Ensure text comes first */
 			opacity: 0; /* Hidden initially */
@@ -292,13 +310,13 @@ nav ul li a.active {
 		color: var(--secondary-color);
 		}
 	h4 {
-		font-size: 0.8em;
+		font-size: 0.875em;
 		margin: 0;
 		color: var(--text-color);
 		text-align: center;
 	}			
 	p {
-		font-size: 0.8em;
+		font-size: 0.875em;
 		color: var(--text-color)
 	}	
 	.contact-info {
@@ -314,16 +332,24 @@ nav ul li a.active {
 		margin: 5px 0;
 		text-align: center;
 	}
+	
+	ul {
+		font-size: 14px;
+		padding-left: 2px; /* Reduce this value to decrease space */
+	}
+
+	
 	.services {
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
 		padding: 15px;
+		order: 2;
 	}
 	.service-item {
 		background-color: var(--primary-color);
 		color: white;
-		padding: 15px;
+		padding: 35px;
 		border-radius: 8px;
 		position: relative;
 		cursor: pointer;
@@ -488,6 +514,7 @@ nav ul li a.active {
 			padding: 20px;
 		}
 		header img {
+			width: 100px;
 			height: 100px; /* larger size */
 			left: 20px;
 		}
@@ -552,6 +579,16 @@ nav ul li a.active {
 			/*flex-direction: row;*/
 			width: 90%;
 		}
+	
+		ul {
+			font-size: 16px;
+			padding-left: 20px; /* Reduce this value to decrease space */
+		}
+
+		.custom-bullets li::before {
+			position: relative;
+		}
+		
 		.profile-section {
 			flex-direction: column;
 			justify-content: space-between;
@@ -582,6 +619,7 @@ nav ul li a.active {
 			align-items: center;
 			justify-content: center;
 			text-align: left;
+			margin: 2rem auto;
 			gap: 2rem;
 		}
 
@@ -610,6 +648,8 @@ nav ul li a.active {
 
 		.feature-image {
 			order: 0; /* Default order for horizontal layout */
+			aspect-ratio: 3 / 2;
+			width: 100%;
 		}
 		
 		.contact-form label {
@@ -620,6 +660,11 @@ nav ul li a.active {
 
 	/* Large Desktop Adjustments */
 	@media (min-width: 1024px) {
+		header img {
+			width: 120px;
+			height: 120px; /* larger size */
+			left: 25px;
+		}
 		.feature-container .feature-text {
 			margin-left: -80px; /* Larger overlap */
 		}
@@ -630,6 +675,30 @@ nav ul li a.active {
 
 		.feature-image img {
 			max-width: 550px; /* larger images */
+		}
+	}
+	
+	/* Smaller phone Adjustments */	
+	@media (max-width: 375px) {
+		header h1 {
+			font-size: 1em;
+		}
+		
+		h4 {
+			font-size: 0.7em;
+		}			
+
+		header p {
+			font-size: 0.4em;
+		}
+
+		header img {
+			width: 30px;
+			height: 30px;
+		}
+	
+		ul {
+			font-size: 12px;
 		}
 	}
 	

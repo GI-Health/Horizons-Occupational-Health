@@ -35,6 +35,7 @@ function toggleMoreContent(id) {
 		}
 }
 
+/*
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -43,7 +44,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-
+*/
 
 const menuButton = document.getElementById("menu-button");
 const navMenu = document.getElementById("nav-menu");
@@ -80,49 +81,51 @@ document.addEventListener("click", (event) => {
 
 
 // Listen for the form submission event
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-  e.preventDefault(); // Prevent the form from submitting normally
+document.addEventListener('DOMContentLoaded', function() {
+	document.getElementById('contact-form').addEventListener('submit', function (e) {
+	  e.preventDefault(); // Prevent the form from submitting normally
 
-  // Get the values from the form fields
-  const nameField = document.getElementById('name');
-  const emailField = document.getElementById('email');
-  const phoneField = document.getElementById('phone');
-  const messageField = document.getElementById('message');
-  const feedback = document.getElementById('form-feedback'); // Element to display feedback messages
+	  // Get the values from the form fields
+	  const nameField = document.getElementById('name');
+	  const emailField = document.getElementById('email');
+	  const phoneField = document.getElementById('phone');
+	  const messageField = document.getElementById('message');
+	  const feedback = document.getElementById('form-feedback'); // Element to display feedback messages
 
-  const name = nameField.value.trim();
-  const email = emailField.value.trim();
-  const phone = phoneField.value.trim();
-  const message = messageField.value.trim();
+	  const name = nameField.value.trim();
+	  const email = emailField.value.trim();
+	  const phone = phoneField.value.trim();
+	  const message = messageField.value.trim();
 
-  // Clear previous invalid class
-  nameField.classList.remove('invalid');
-  emailField.classList.remove('invalid');
-  phoneField.classList.remove('invalid');
-  messageField.classList.remove('invalid');
+	  // Clear previous invalid class
+	  nameField.classList.remove('invalid');
+	  emailField.classList.remove('invalid');
+	  phoneField.classList.remove('invalid');
+	  messageField.classList.remove('invalid');
 
-  // Simple validation to ensure all fields are filled out correctly
-  if (name && isValidEmail(email) && isValidPhone(phone) && message) {
-    // Display success feedback
-    feedback.style.color = 'green';
-    feedback.textContent = 'Form submitted successfully!';
-    feedback.style.display = 'block';
+	  // Simple validation to ensure all fields are filled out correctly but Allow empty phone
+	  if (name && isValidEmail(email) && (phone === '' || isValidPhone(phone)) && message) {
+		// Display success feedback
+		feedback.style.color = 'green';
+		feedback.textContent = 'Form submitted successfully!';
+		feedback.style.display = 'block';
 
-    // Call the function to submit the form to Google Forms using iframe
-    handleFormSubmit();
+		// Call the function to submit the form to Google Forms using iframe
+		handleFormSubmit();
 
-  } else {
-    // Show error feedback if validation fails
-    feedback.style.color = 'red';
-    feedback.textContent = 'Please fill out highlighted fields correctly.';
-    feedback.style.display = 'block';
+	  } else {
+		// Show error feedback if validation fails
+		feedback.style.color = 'red';
+		feedback.textContent = 'Please fill out highlighted fields correctly.';
+		feedback.style.display = 'block';
 
-    // Highlight invalid fields in red
-    if (!name) nameField.classList.add('invalid');
-    if (!isValidEmail(email)) emailField.classList.add('invalid');
-    if (!isValidPhone(phone)) phoneField.classList.add('invalid');
-    if (!message) messageField.classList.add('invalid');
-  }
+		// Highlight invalid fields in red
+		if (!name) nameField.classList.add('invalid');
+		if (!isValidEmail(email)) emailField.classList.add('invalid');
+		if (phone && !isValidPhone(phone)) phoneField.classList.add('invalid');
+		if (!message) messageField.classList.add('invalid');
+	  }
+	});
 });
 
 // Function to validate email
